@@ -5,177 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zhang Siyu | Personal Homepage</title>
     <style>
-        /* 全局重置：去掉默认边距，统一字体 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* 深色背景：黑金主色调 */
         body {
             font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-            color: #e0e0e0;
-            line-height: 1.7;
-            padding: 40px 20px;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            color: #333;
+            line-height: 1.8;
+            padding: 50px 20px;
             min-height: 100vh;
         }
 
-        /* 最大宽度限制：保证大屏幕内容不跑偏 */
-        .wrapper {
-            max-width: 900px;
+        .container {
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* 头部标题区：居中大气 */
         header {
             text-align: center;
-            margin-bottom: 60px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 50px;
         }
 
         header h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            background: linear-gradient(90deg, #ffffff, #a8ff78);
+            font-size: 2.4rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, #7f7fd5, #86a8e7, #91eac9);
             -webkit-background-clip: text;
             color: transparent;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+            margin-bottom: 8px;
         }
 
         header p {
-            font-size: 1.1rem;
-            color: #999;
+            font-size: 1rem;
+            color: #666;
         }
 
-        /* 卡片容器：精致阴影 + 毛玻璃效果 */
         .card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 35px;
             margin-bottom: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
         }
 
-        /* 悬浮效果：轻微上浮 + 边框高亮 */
         .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(168, 255, 120, 0.3);
-            box-shadow: 0 15px 40px -10px rgba(168, 255, 120, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(120, 120, 255, 0.08);
         }
 
-        /* 标题样式：金色左侧边框 */
         .card h2 {
-            font-size: 1.4rem;
-            color: #a8ff78;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            color: #7f7fd5;
+            margin-bottom: 18px;
             padding-left: 12px;
-            border-left: 4px solid #a8ff78;
+            border-left: 4px solid #7f7fd5;
             font-weight: 600;
         }
 
-        /* 内容文字：柔和白色 */
         .card p, .card li {
-            color: #dcdcdc;
+            color: #444;
             font-size: 1rem;
         }
 
-        /* 列表样式：去掉圆点，增加间距 */
-        .card ul {
+        ul {
             list-style: none;
             padding-left: 0;
         }
 
-        .card li {
+        li {
             position: relative;
             padding-left: 20px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
-        /* 列表自定义图标：绿色小方块 */
-        .card li::before {
-            content: '■';
+        li::before {
+            content: '•';
             position: absolute;
             left: 0;
-            color: #a8ff78;
-            font-size: 0.8rem;
-            top: 2px;
+            color: #7f7fd5;
+            font-size: 1.2rem;
+            top: -2px;
         }
 
-        /* 联系方式：按钮化展示 */
-        .contact-links {
+        .contact {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
-        .contact-links a {
-            display: inline-block;
-            padding: 12px 24px;
-            background: rgba(168, 255, 120, 0.1);
-            border: 1px solid #a8ff78;
-            color: #a8ff78;
-            border-radius: 8px;
+        .contact a {
+            padding: 10px 20px;
+            background: rgba(127, 127, 213, 0.08);
+            border: 1px solid rgba(127, 127, 213, 0.2);
+            color: #7f7fd5;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s;
         }
 
-        .contact-links a:hover {
-            background: #a8ff78;
-            color: #0f2027;
-            font-weight: bold;
+        .contact a:hover {
+            background: #7f7fd5;
+            color: #fff;
         }
 
-        /* 响应式：手机端适配，缩小内边距 */
         @media (max-width: 768px) {
-            body { padding: 20px 10px; }
-            header h1 { font-size: 2.2rem; }
-            .card { padding: 25px 20px; }
+            header h1 { font-size: 2rem; }
+            .card { padding: 28px 22px; }
         }
     </style>
 </head>
+
 <body>
-    <div class="wrapper">
-        <!-- 头部：名字和副标题 -->
+    <div class="container">
         <header>
             <h1>Zhang Siyu</h1>
             <p>Shanghai Sanda University | Junior Student</p>
         </header>
 
-        <!-- 个人简介卡片 -->
-        <section class="card">
+        <div class="card">
             <h2>About Me</h2>
             <p>
-                目前就读于上海杉达学院，大三在读。专注于专业知识的深度学习与综合能力的提升，性格沉稳，做事严谨。
-                致力于在技术与学术领域不断探索，积累扎实的理论基础与实践经验，期待在未来的学习与工作中创造价值。
+                目前就读于上海杉达学院，大三在读。专注于专业知识学习与综合能力提升，热爱生活，乐于探索，
+                保持耐心与专注，持续成长，不断积累属于自己的经历与力量。
             </p>
-        </section>
+        </div>
 
-        <!-- 教育经历卡片 -->
-        <section class="card">
+        <div class="card">
             <h2>Education</h2>
             <ul>
-                <li>Shanghai Sanda University | 2023.09 - 至今</li>
+                <li>Shanghai Sanda University | 2023.09 – Present</li>
                 <li>Major: Data Science and Big Data Technology</li>
             </ul>
-        </section>
+        </div>
 
-        <!-- 联系方式卡片 -->
-        <section class="card">
+        <div class="card">
             <h2>Contact</h2>
-            <div class="contact-links">
-                <a href="mailto:zhangsiyu0066@163.com">📩 zhangsiyu0066@163.com</a>
-                <a href="https://github.com/zhangsiyu2005">💻 GitHub Profile</a>
+            <div class="contact">
+                <a href="mailto:zhangsiyu0066@163.com">📩 Email</a>
+                <a href="https://github.com/zhangsiyu2005">💻 GitHub</a>
             </div>
-        </section>
+        </div>
     </div>
 </body>
 </html>
